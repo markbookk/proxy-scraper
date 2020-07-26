@@ -7,7 +7,7 @@ from multiprocessing.pool import ThreadPool
 def makesoup(url): # pass url to beautifulsoup to parse html. Url is defined in menu for each site so code doesnt have to be repeated for each site
     page=requests.get(url)
     print(url + "  scraped successfully")
-    return BeautifulSoup(page.text,"lxml")
+    return BeautifulSoup(page.text,"html.parser")
 
 def proxyscrape(table): # scrape proxy data from table on site, add to list that was created earlier
     proxies = set()
